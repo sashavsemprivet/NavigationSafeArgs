@@ -30,23 +30,11 @@ class SecondFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val person = if (Build.VERSION.SDK_INT >= 33) {
-            arguments?.getParcelable("person", Person::class.java)
-        } else {
-            arguments?.getParcelable("person")
-        }
-//        secondfragmentViewModel.personLiveData.observe(viewLifecycleOwner){
-//            print("$it !!!!")
-//        }
-//        binding.showName.setOnClickListener {
-//            print("@@@@@@@@@@@@")
-//            secondfragmentViewModel.changelivedata() }
-//        Эта строчка должна работать, но SecondFragmentArgs не генерируется
 
 
-//        val person = SecondFragmentArgs.fromBundle(requireArguments()).person
-        binding.showNameObject.text = person?.toString()
-        binding.showName.text = person?.name
-        binding.showAge.text = person?.age.toString()
+        val person = SecondFragmentArgs.fromBundle(requireArguments()).person
+        binding.showNameObject.text = person.toString()
+        binding.showName.text = person.name
+        binding.showAge.text = person.age.toString()
     }
 }

@@ -42,13 +42,8 @@ class FirstFragment : Fragment() {
             val name = binding.enterName.text.toString()
             val age = binding.enterAge.text.toString()
             val person = Person(name, age.toInt())
-//            val bundle = Bundle()
-//            bundle.putParcelable("person", person)
-//            findNavController().navigate(R.id.action_firstFragment_to_secondFragment, bundle)
 
-//            Здесь всё впорядке. FirstFragmentDirection успешно сгенерирован.
             val action = FirstFragmentDirections.actionFirstFragmentToSecondFragment(person)
-//            action.arguments.putParcelable("person", person)
             findNavController().navigate(action)
 //        }
         }
